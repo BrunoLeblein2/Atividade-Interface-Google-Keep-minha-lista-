@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Lista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffa500;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .titulo {
+            text-align: center;
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .inputContainer {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 70%;
+        }
+
+        .botaoAdicionar {
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            color: gray;
+            cursor: pointer;
+            font-size: 18px;
+            height: 40px;
+            margin-left: 10px;
+            width: 40px;
+        }
+
+        .botaoAdicionar:hover {
+            background-color: #ddd;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
+            padding: 2px;
+        }
+
+        .botaoRemover {
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            color: gray;
+            display: none;
+            cursor: pointer;
+            height: 25px;
+            width: 25px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .botaoRemover:hover {
+            background: #ddd;
+        }
+
+        ul li:hover .botaoRemover {
+            display: flex;
+        }
+
+        ul li input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .item-conteudo {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <script>
+        let indiceDaLista = 0;
+
+        function addItem() {
+            const inputDoUsuario = document.getElementById('textoUsuario');
+            const textoDigitado = inputDoUsuario.value;
+
+            const lista = document.getElementById('lista');
+
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div class="item-conteudo">
+                    <input type="checkbox" name="item-${indiceDaLista}" id="item-${indiceDaLista}">
+                    <span>${textoDigitado === "" ? "" : textoDigitado}</span>
+                </div>
+                <button class="botaoRemover" onclick="removerItem(this)"><i class="fa-solid fa-xmark"></i></button>
+            `;
+
+            lista.appendChild(li);
+            indiceDaLista++;
+            inputDoUsuario.value = '';
+        }
+
+        function removerItem(botao) {
+            const li = botao.parentElement;
+            li.remove();
+        }  
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Minha Lista</h1>
+        <ul id="lista"></ul>
+        <div class="inputContainer">
+            <button class="botaoAdicionar" onclick="addItem()"><i class="fa-solid fa-plus"></i></button>
+            <input type="text" id="textoUsuario">
+        </div>
+    </div>
+</body>
+</html>

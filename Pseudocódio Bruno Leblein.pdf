@@ -1,0 +1,105 @@
+//1-Declare uma variável chamada idade e atribua a ela o valor da sua idade.
+Variável idade
+Início
+idade ← 17
+Escreva idade
+Fim.
+
+//2-Declare uma constante chamada PI e atribua a ela o valor de π (3.14159).
+Constante PI
+PI ← 3.14159
+Escreva PI
+
+//3-Escreva um programa que verifica se um número é positivo, negativo ou zero.
+Função verificarNumero(numero)
+    Se (numero > 0) Então
+        Retorne "O número é positivo."
+    Senão Se (numero < 0) Então
+        Retorne "O número é negativo."
+    Senão
+        Retorne "O número é zero."
+    Fim Se
+Fim Função
+
+Escreva verificarNumero(9)
+Escreva verificarNumero(-4)
+Escreva verificarNumero(0)
+Fim
+
+//4-Crie duas variáveis, num1 e num2, atribua valores a elas e então exiba a soma.
+Variável num1
+Variável num2
+Início
+num1 ← 10
+num2 ← 28
+Variável soma
+soma ← num1 + num2
+Escreva "O resultado da soma será",soma
+Fim.
+
+//5-Declare uma variável chamada nome e atribua a ela o seu nome.
+Variável nome
+Início
+nome ← "Bruno"
+Escreva nome
+Fim.
+
+//6-Concatene duas strings para formar uma frase.
+Variável string1
+Variável string2
+Início
+string1 ← "Céu"
+string2 ← " Azul"
+Variável frases
+frases ← string1 + string2
+Escreva frases
+Fim.
+
+
+//7-Escreva uma expressão que verifica se um número é maior que outro.
+Variável numero1
+Variável numero2
+Início
+numero1 ← 88
+numero2 ← 46
+Se (numero1 > numero2) Então
+    Escreva "O número1 é maior que o número2."
+Senão
+    Escreva "O número1 não é maior que o número2."
+Fim.
+
+//8-Escreva uma expressão que verifica se duas strings são iguais.
+Variável string1
+Variável string2
+Início
+string1 ← "Vermelho"
+string2 ← "Verde"
+Se (string1 é igual a string2) Então
+    Escreva "As strings são iguais"
+Senão
+    Escreva "As strings são diferentes"
+Fim.
+
+
+//9-Escreva um programa que tem a idade do usuário, com base nela, determina se a pessoa pode votar (idade igual ou superior a 16 anos) ou não.
+var idade = prompt("Qual é a sua idade?");
+Variável idade
+Início
+idade ← Entrada do usuário ("Qual é a sua idade?")
+Se (idade >= 16) Então
+    Escreva "Você pode votar"
+Senão Se (idade >= 0 e idade < 16) Então
+    Escreva "Você não pode votar"
+Senão
+    Escreva "Idade inválida"
+Fim.
+
+//10-Escreva um programa que determina se um ano é bissexto ou não. Um ano bissexto é divisível por 4, exceto para anos que são múltiplos de 100, a menos que sejam também múltiplos de 400.
+Variável ano
+Início
+ano ← Entrada do usuário ("Qual o ano que você gostaria de saber?")
+Se ((ano é divisível por 4 e não é divisível por 100) ou (ano é divisível por 400)) Então
+    Escreva ano + "É um ano bissexto."
+Senão
+    Escreva ano + "Não é um ano bissexto."
+Fim.
